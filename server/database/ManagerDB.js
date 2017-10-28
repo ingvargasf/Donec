@@ -427,10 +427,7 @@ ManagerDB.prototype.createSchema = function(name, options,lang,callback){
 					 	var instance = new model(obj_map);//Instancia del Modelo
 				 	 	instance.save(function(err,doc){
 				 	 	
-				 	 		if(err){
-				 	 			throw err;
-				 	 			return;
-				 	 		}
+			
 		 	 		      	if(name=='schema'){
   						 		self.autoRefesh = true;
   						 		self.refresh(function(){
@@ -454,6 +451,7 @@ ManagerDB.prototype.createSchema = function(name, options,lang,callback){
 				if(callback!=undefined) callback("No se encontraron parametros de entrada."); 
 			}
 		}	
+		
 		schema.statics.query = function(params,callback){
 			var query = null;
 			if(params._id){
