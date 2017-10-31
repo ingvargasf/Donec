@@ -7,7 +7,8 @@ var url = require("url");
 var pem = require('pem');
 var cors = require('cors')
 var moment = require('moment-timezone');
-
+const ElectronOnline = require('electron-online')
+const connection = new ElectronOnline();
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var session_middleware = require("./middlewares/session");
@@ -108,10 +109,26 @@ module.exports = function(config){
 						socket.emit("upload-fail",err);
 					});
 				});
+
+				var online = (connection.status=='ONLINE');
+				connection.on("online",function(msg){
+					if(!online){
+						console.log("Aplicación en linea.",connection.status);
+						socket.emit("online","Aplicación en linea.",connection.status);
+						online = true;
+					}
+				});
+				connection.on("offline",function(msg){
+					if(online){
+						console.log("Aplicación sin conexión.",connection.status);
+						socket.emit("offline","Aplicación sin conexión.",connection.status);
+						online = false;
+					}
+				});
 				
 			});
 			
-		
+			
 			
 			console.log("Aplicación Iniciada.",new Date().toLocaleString());
 			initialized =true;
