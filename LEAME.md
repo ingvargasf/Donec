@@ -1,4 +1,4 @@
-#Donec API:
+# Donec API:
 
 
 Donec API Es la herramienta ideal para agilizar el proceso de Desarrollo de sus proyectos; Permite crear Modelos y Schemas de manera dinámica, despreocúpese de estructurar en carpetas y archivos sus modelos, Donec lo hace por ti, además le proporciona al instante acceso a la arquitectura Rest (Representational State Tranfer) para consumir los servicios de cada Entidad.
@@ -8,7 +8,7 @@ http://localhost:3000/app/personas
 
  De esta forma disponemos de las operaciones genéricas: CRUD para cada entidad, esto sin duda agiliza el desarrollo de cualquier aplicación y además ofrece escalabilidad por medio de funciones especializadas (Ver Routes).
 
-##Schemas:
+## Schemas:
 
 Los Schemas representan la estructura de los Modelos, cada modelo instanciado dinámicamente representa una tabla, como se le conoce en bases de datos relacionales, en este contexto utilizaremos el termino de Colecciones (Collections).
 
@@ -45,21 +45,21 @@ Si desea listar los Schemas, utilice el método **GET**, si especifica parámetr
 De esta manera podemos, crear, actualizar, listar y eliminar Schemas y construir la base de datos de nuestra aplicación.
 
 
-##Routes:
+## Routes:
 
 Las rutas son los recursos o servicios de la aplicación, estas pueden ser públicas o privadas.
-##Rutas públicas: son recursos accesibles sin autenticación, como por ejemplo:  http://localhost:3000/schemas/ http://localhost:3000/login/ http://localhost:3000/logout	http://localhost:3000/install	
+## Rutas públicas: son recursos accesibles sin autenticación, como por ejemplo:  http://localhost:3000/schemas/ http://localhost:3000/login/ http://localhost:3000/logout	http://localhost:3000/install	
 
-##Rutas privadas: son aquellas que hacen parte de la aplicación, por ello se encuentran en la ruta /app/RUTA_PRIVADA
+## Rutas privadas: son aquellas que hacen parte de la aplicación, por ello se encuentran en la ruta /app/RUTA_PRIVADA
 Por ejemplo: una ruta privada seria la referente a una colección o servicio que hace parte de la lógica de negocio de nuestra aplicación, que podría ser “pagos”. Esta ruta estaría accesible solo si el usuario está autenticado. /app/pagos
 
-##Rutas Dínamicas:
+## Rutas Dínamicas:
 
 Las rutas dinámicas se generan automáticamente al crear un nuevo Schema, estas son accesibles dentro de la aplicación, por ejemplo: /app/medicos
 
 Podemos seguir extendiendo la funcionalidad de nuestra aplicación creando nuestra propias rutas personalizadas.
 
-##Rutas Personalizadas:
+## Rutas Personalizadas:
 
 Estas se deben colocar dentro del directorio server/routes en este directorio, puede crear sus rutas públicas personalizadas,  creando un archivo js por ejemplo: MedicoRoute.js
 la estructura de un router publico seria:
@@ -97,7 +97,7 @@ Ejemplo: Filtrar los médicos y retornar la respuesta en Json:
 	```
 
 
-##Sobre escritura de Rutas Dinámicas: 
+## Sobre escritura de Rutas Dinámicas: 
 
 Donec, permite reescribir las rutas dinámicas de las entidades de la aplicación, estas se encuentran el  el directorio /server/routes/app/
 
