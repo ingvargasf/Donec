@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "main": "./index.js",
   "devDependencies": {
-   
   },
   "homepage": "./index.html",
   "dependencies": {
@@ -28,7 +27,7 @@
     "remote": "^0.2.6",
     "request": "^2.81.0",
     "socket.io": "^2.0.3",
-    "string-capitalize": "^1.0.1",
+    "string-capitalize": "^1.0.1"
   },
   "scripts": {
     "start": "node index.js"
