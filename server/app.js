@@ -72,7 +72,7 @@ app.get("/config",function(req,res){
 app.get("/",function(req,res){
 	
 	//res.send(`<h2>Welcome to:<br>Donec API - Hard Code to support web desktop Applications.</h2><img src="public/resources/images/logo.png" style="width:250px;height:250px;" />`);
-	res.sendFile('/home/ubuntu/workspace/Falcon/public/index.html');
+	res.sendFile(path.join(__dirname,'index.html'));
 });
 
 module.exports = function(config){
