@@ -48,9 +48,11 @@ De esta manera podemos, crear, actualizar, listar y eliminar Schemas y construir
 ## Routes:
 
 Las rutas son los recursos o servicios de la aplicación, estas pueden ser públicas o privadas.
-## Rutas públicas: son recursos accesibles sin autenticación, como por ejemplo:  http://localhost:3000/schemas/ http://localhost:3000/login/ http://localhost:3000/logout	http://localhost:3000/install	
+## Rutas públicas: 
+Son recursos accesibles sin autenticación, como por ejemplo:  http://localhost:3000/schemas/ http://localhost:3000/login/ http://localhost:3000/logout	http://localhost:3000/install	
 
-## Rutas privadas: son aquellas que hacen parte de la aplicación, por ello se encuentran en la ruta /app/RUTA_PRIVADA
+## Rutas privadas: 
+Son aquellas que hacen parte de la aplicación, por ello se encuentran en la ruta /app/RUTA_PRIVADA
 Por ejemplo: una ruta privada seria la referente a una colección o servicio que hace parte de la lógica de negocio de nuestra aplicación, que podría ser “pagos”. Esta ruta estaría accesible solo si el usuario está autenticado. /app/pagos
 
 ## Rutas Dínamicas:
