@@ -90,7 +90,7 @@ Un router puede contener una serie de rutas personalizadas (servicios), que pued
 
 Ejemplo: Filtrar los médicos y retornar la respuesta en Json:
 	
-	```javascript
+```javascript
 	
 	app.get("/medico",function(req,res){
 		var params = req.query;
@@ -99,7 +99,7 @@ Ejemplo: Filtrar los médicos y retornar la respuesta en Json:
 		});
 	});
 
-	```
+```
 
 
 ## Sobre escritura de Rutas Dinámicas: 
@@ -156,14 +156,14 @@ Esta ruta remplazará la ruta creada dinámicamente para el recurso /users por m
 En este ejemplo se extiende la funcionalidad del modelo user, creando un método nuevo denominado listar, que internamente realiza una consulta en la base de datos, haciendo “join” con usergroup, y recorriendo los módulos del grupo para insertarlos en la colección de modulos, con la ayuda de un cursor.
 
 Luego esta función es utilizada en el router por medio del metodo GET
-	```javascript
+```javascript
 	router.route("/users").get(function(req,res){
 		//método personalizado creado en el constructor del router.
 		db.user.listar(req.query,function(docs){
 			res.send(JSON.stringify({data:docs,success:true}));
 		});
 	});
-	```
+```
 En las rutas dinámicas se cuenta con los objetos:  app,io,router,db,schema
 **app:** permite acceder a funciones especificas de la aplicación,
 **router:** Determina el middleware para generar nuevas rutas para la aplicación.
