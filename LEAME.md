@@ -89,13 +89,16 @@ module.exports = function(app,io,db){
 Un router puede contener una serie de rutas personalizadas (servicios), que pueden ser accedidas por los diferentes métodos de la API Rest, y realizar procedimientos específicos con la base de datos o llamar servicios que realicen alguna operación especifica y retornar una respuesta al cliente.
 
 Ejemplo: Filtrar los médicos y retornar la respuesta en Json:
+	
 	```javascript
+	
 	app.get("/medico",function(req,res){
 		var params = req.query;
 		db.medico.find(params,function(err,docs){
 			res.send(JSON.stringify({data:docs}));
 		});
 	});
+
 	```
 
 
