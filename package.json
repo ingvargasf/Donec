@@ -37,6 +37,10 @@
     "name": "Fabian Vargas",
     "email": "f_varga@hotmail.com"
   },
+  "repository":{
+    "type": "git",
+    "url": "git://github.com/ingvargasf/Donec.git"
+  },
   "description": "Donec API",
   "license": "MIT",
   "build": {
