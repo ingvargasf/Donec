@@ -29,6 +29,7 @@ let win
 
 function createWindow(){
 	win = new BrowserWindow({
+		icon:__dirname+'/assests/icon.png',
 		width:800,
 		height:600
 	});
@@ -37,7 +38,19 @@ function createWindow(){
 		protocol:'file',
 		slashes:true
 	}));
+	//Open devtools
+	win.webContents.openDevTools();
+
+	win.on("closed",()=>{
+		win = null;
+	})
+	const ses = win.webContents.session;
+
+	win.once('ready-to-show', () => {
+	 	win.show();
+	});
 }
+
 app.on("ready",function(){
 
 	loadConfig(function(config){
@@ -55,3 +68,13 @@ app.on("ready",function(){
 		});
 	});
 });
+app.on("window-all-closed",()=>{
+	if(process.platform !== 'drawin'){
+		app.quit()
+	}
+})
+app.on("active",()=>{
+	if(win===null){
+		createWindow()
+	}
+})
